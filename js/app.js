@@ -65,10 +65,10 @@
     slideDiv.className = 'hero-slide active';
 
     const mediaHtml = slide.videoUrl
-      ? `<video autoplay muted loop playsinline poster="${slide.imageUrl}">
+      ? `<video autoplay muted loop playsinline preload="auto" poster="${slide.imageUrl}" onerror="this.style.display='none';">
           <source src="${slide.videoUrl}" type="video/mp4">
          </video>`
-      : `<img src="${slide.imageUrl}" alt="Hero Banner">`;
+      : `<img src="${slide.imageUrl}" alt="Hero Banner" onerror="this.style.display='none';">`;
 
     slideDiv.innerHTML = `
       <div class="hero-media-wrapper">${mediaHtml}</div>
