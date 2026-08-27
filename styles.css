@@ -1485,6 +1485,12 @@ p {
   margin-bottom: 1.25rem;
 }
 
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
 .form-label {
   display: block;
   font-family: var(--font-heading);
@@ -1982,12 +1988,9 @@ p {
 }
 
 @media (max-width: 768px) {
+  /* Remove the blue utility/contact bar on mobile - reclaims header space */
   .utility-bar {
-    font-size: 0.75rem;
-  }
-
-  .utility-info {
-    gap: 0.75rem;
+    display: none;
   }
 
   .nav-menu {
@@ -1998,12 +2001,51 @@ p {
     display: block;
   }
 
+  /* Nav links live in the side drawer on mobile - hide the duplicate CTA
+     button that used to sit next to the hamburger to reduce clutter */
+  .navbar-cta {
+    display: none;
+  }
+
+  .navbar {
+    height: 64px;
+  }
+
+  .brand-logo img {
+    height: 42px !important;
+  }
+
+  /* Hero video/image: shorter and better-proportioned now the utility
+     bar above it is gone, so it doesn't dominate the whole screen */
+  .hero-section {
+    min-height: 78vh;
+  }
+
+  .hero-content-container {
+    padding: 3rem 0;
+  }
+
   .hero-headline {
     font-size: 2.1rem;
   }
 
   .hero-subtitle {
     font-size: 0.975rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-cta-group {
+    gap: 0.75rem;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .footer-grid {
@@ -2057,5 +2099,17 @@ p {
   .photo-item {
     flex: 0 0 82vw;
     height: 350px;
+  }
+
+  .hero-section {
+    min-height: 72vh;
+  }
+
+  .hero-headline {
+    font-size: 1.75rem;
+  }
+
+  .container {
+    padding: 0 1.1rem;
   }
 }
